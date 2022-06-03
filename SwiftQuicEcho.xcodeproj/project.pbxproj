@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9FF741D8284A67FD00760E1E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF741D7284A67FD00760E1E /* main.swift */; };
+		9FF741E1284A6AC300760E1E /* Quic in Frameworks */ = {isa = PBXBuildFile; productRef = 9FF741E0284A6AC300760E1E /* Quic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		9FF741D4284A67FD00760E1E /* SwiftQuicEcho */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftQuicEcho; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF741D7284A67FD00760E1E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9FF741DE284A6A9B00760E1E /* swift-quic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-quic"; path = "../quic/swift-quic"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF741E1284A6AC300760E1E /* Quic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +44,10 @@
 		9FF741CB284A67FD00760E1E = {
 			isa = PBXGroup;
 			children = (
+				9FF741DE284A6A9B00760E1E /* swift-quic */,
 				9FF741D6284A67FD00760E1E /* SwiftQuicEcho */,
 				9FF741D5284A67FD00760E1E /* Products */,
+				9FF741DF284A6AC300760E1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +67,13 @@
 			path = SwiftQuicEcho;
 			sourceTree = "<group>";
 		};
+		9FF741DF284A6AC300760E1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +90,9 @@
 			dependencies = (
 			);
 			name = SwiftQuicEcho;
+			packageProductDependencies = (
+				9FF741E0284A6AC300760E1E /* Quic */,
+			);
 			productName = SwiftQuicEcho;
 			productReference = 9FF741D4284A67FD00760E1E /* SwiftQuicEcho */;
 			productType = "com.apple.product-type.tool";
@@ -284,6 +299,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9FF741E0284A6AC300760E1E /* Quic */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Quic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9FF741CC284A67FD00760E1E /* Project object */;
 }
