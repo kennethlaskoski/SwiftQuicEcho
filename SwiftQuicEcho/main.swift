@@ -5,6 +5,8 @@
 //  Created by Kenneth Laskoski on 03/06/22.
 //
 
+import Foundation
+
 import Quic
 import Darwin
 
@@ -22,29 +24,21 @@ let connect: (Server) async throws -> Connection = {
   try await server.accept()
 }
 
-let accept: (Connection) async throws -> Stream = {
+let accept: (Connection) async throws -> Quic.Stream = {
   connection in
   try await connection.accept()
 }
 
-let receive: (Stream) async throws -> String = {
-  stream in
-  try await stream.receive()
-}
-
-let send: (Stream, String) async throws -> Void = {
-  stream, string in
-  try await stream.send(string)
-}
-
 let main = Task {
   let server = try await bootstrap()
+  print("Started ...")
   let connection = try await connect(server)
   let stream = try await accept(connection)
-  for i in 0..<10 {
-    let string = try await receive(stream)
-    print(i, string)
-    try await send(stream, "Sending \(i)")
+  print("Connected...")
+  while true {
+    let data = try await stream.receive()
+    print("Received \(data)")
+    try await stream.send(data)
   }
 }
 
